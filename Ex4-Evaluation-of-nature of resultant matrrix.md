@@ -1,81 +1,68 @@
 # Ex4 You are given a Java program that performs matrix addition. If Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension, what will be the nature (even/odd/mixed) of the resulting matrix?
-## DATE:15.11.25
+## DATE: 15/08/25
 ## AIM:
 To write a java function to evaluate weather the given Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension and find the nature of resultant matrrix.
 
 ## Algorithm
-
-1. Start the program.  
-2. Read the dimensions of the matrices.  
-3. Read elements of Matrix A (odd numbers) and Matrix B (even numbers).  
-4. Perform matrix addition and store the result in Matrix C.  
-5. Check whether all elements in Matrix C are even, odd, or mixed.  
-6. Display the resulting matrix and its nature.  
-7. Stop the program.   
-
+```
+1. Start the program.
+2.Read the number of rows rows and columns cols.
+3.Create three 2D arrays.
+4.Input elements for Matrix A.
+5.Input elements for Matrix B.
+6.Perform matrix addition
+7.After each row is printed, move to the next line.
+8. End the program.  
+```
 ## Program:
 ```
 /*
-Program to find the nature of the resultant matrix.
-Developed by: Dharanya N
-RegisterNumber: 212223230044
+Program to ind the nature of resultant matrrix.
+Developed by:DHARANYA N 
+RegisterNumber:  212223230044
 */
+
 import java.util.Scanner;
 
-public class MatrixNature {
+public class OddEvenMatrixAddition {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of rows: ");
         int rows = sc.nextInt();
-        System.out.print("Enter number of columns: ");
         int cols = sc.nextInt();
 
         int[][] A = new int[rows][cols];
         int[][] B = new int[rows][cols];
-        int[][] C = new int[rows][cols];
-
-        System.out.println("Enter elements of Matrix A (odd numbers):");
-        for (int i = 0; i < rows; i++)
-            for (int j = 0; j < cols; j++)
-                A[i][j] = sc.nextInt();
-
-        System.out.println("Enter elements of Matrix B (even numbers):");
-        for (int i = 0; i < rows; i++)
-            for (int j = 0; j < cols; j++)
-                B[i][j] = sc.nextInt();
-
-        System.out.println("Resultant Matrix (A + B):");
-        String nature = "";
-        boolean allEven = true, allOdd = true;
+        int[][] result = new int[rows][cols];
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                C[i][j] = A[i][j] + B[i][j];
-                System.out.print(C[i][j] + " ");
-                if (C[i][j] % 2 == 0)
-                    allOdd = false;
-                else
-                    allEven = false;
+                A[i][j] = sc.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                B[i][j] = sc.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = A[i][j] + B[i][j];
+                System.out.print(result[i][j] + " ");
             }
             System.out.println();
         }
-
-        if (allEven)
-            nature = "Even";
-        else if (allOdd)
-            nature = "Odd";
-        else
-            nature = "Mixed";
-
-        System.out.println("Nature of resultant matrix: " + nature);
         sc.close();
     }
 }
+
+
 ```
 
 ## Output:
 
-<img width="464" height="484" alt="image" src="https://github.com/user-attachments/assets/2f7fd6f3-6aac-4de9-bf87-dfaea9e23965" />
+<img width="491" height="756" alt="image" src="https://github.com/user-attachments/assets/f3559ebf-4c04-4c4d-899b-bd507f9ad631" />
 
 
 ## Result:
